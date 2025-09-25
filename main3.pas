@@ -1,31 +1,40 @@
 uses crt;
-
 var
-   alamat, nama, tempatlahir: string;
-   umur: integer;
-
+    a, b , tambah , kurang , kali , modulo : integer;
+    bagi : real;
+    hasil : boolean;
 begin
-   clrscr;  { bersihkan layar }
+clrscr;
+a := 10;
+b := 3;
+// tambah := a + b;
+// kurang := a - b;
+// kali := a * b;
+// bagi := a / b;
+// modulo := a mod b;
+//     writeln('Hasil jumlah    : ', tambah);
+//     writeln('Hasil kurang    : ', kurang);
+//     writeln('Hasil kali      : ', kali);
+//     writeln('Hasil bagi      : ', bagi:0:2);
+//     writeln('Hasil modulo    : ', modulo);
 
-   writeln('   Biodata Abal-Abal   ');
+// writeln(a=b);
+// writeln(a<>b);
+// writeln(a>b);
+// writeln(a<b);
+// writeln(a>=b);
+// writeln(a<=b);
 
-     writeln('Nama        : ');
-     writeln('Alamat      : ');
-     writeln('Tempat Lahir: ');
-     writeln('Umur        : ');
-   
-   
-     GotoXY(15,2);   readln(nama);
-     GotoXY(15,3);   readln(alamat);
-     GotoXY(15,4);   readln(tempatlahir);
-     GotoXY(15,5);   readln(umur);
+writeln(true and true);
+writeln(true and false);
+writeln(false and true);
+writeln(false and false);
 
-   clrscr; 
-   writeln('=== Hasil Biodata Anda ===');
-   writeln('Nama        : ', nama);
-   writeln('Alamat      : ', alamat);
-   writeln('Tempat Lahir: ', tempatlahir);
-   writeln('Umur        : ', umur);
+writeln(true or true);
+writeln(true or false);
+writeln(false or true);
+writeln(false or false);
 
-   readln; { supaya program tidak langsung keluar }
+writeln(not true);
+writeln(not false);
 end.

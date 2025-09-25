@@ -1,17 +1,20 @@
 uses crt;
- label a,b,c,d,e,f;
+var
+    p, l: integer;
+    luaslapangan, kelilinglapangan: real;
 begin
-    goto a;
-    c:write('Universitas');
-    goto d;
-    a:write('ilmu');
-    writeln('Komputer');
-    goto b;
-    e:write('Utara');
-    goto f;
-    b:writeln('Fasilkom-TI');
-    goto c;
-    d:write('Sumatera');
-    goto e;
-    f:
+    clrscr;
+    
+    write('Masukkan panjang lapangan: ');
+    readln(p);
+    write('Masukkan lebar lapangan  : ');
+    readln(l);
+    
+    luaslapangan := p * l;
+    kelilinglapangan := 2 * (p + l);
+    
+    writeln('Luas lapangan      : ', luaslapangan:0:2);
+    writeln('Keliling lapangan  : ', kelilinglapangan:0:2);
+    
+    readln; // agar jendela tidak langsung tertutup
 end.
