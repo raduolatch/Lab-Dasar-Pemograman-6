@@ -1,0 +1,1 @@
+hitungTotalStok := total;
