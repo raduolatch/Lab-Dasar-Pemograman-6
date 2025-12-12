@@ -1,1 +1,77 @@
+uses crt;
+
+const
+  MAX = 50;
+  BATAS_HABIS = 5;
+
+type
+  TBarang = record
+    nama: string[30];
+    stok: integer;
+    hargaModal: real;
+  end;
+
+var
+  daftar: array[1..MAX] of TBarang;
+  n, i: integer;
+
+
+
+function hitungTotalStok: real; //function menghitung total nilai stok
+var
+  total: real;
+  j: integer;
+begin
+  total := 0;
+
+  for j := 1 to n do
+    total := total + (daftar[j].stok * daftar[j].hargaModal);
+
+  hitungTotalStok := total;
+end;
+
+
+begin
+  clrscr;
+  writeln('=== SISTEM MENGHITUNG STOK ===');
+
+  write('Masukkan jumlah barang: ');
+  readln(n);
+
+
+  for i := 1 to n do
+  begin
+    writeln;
+    writeln('Data barang ke-', i);
+    write('Nama Barang        : '); 
+    readln(daftar[i].nama);
+    write('Stok Barang        : '); 
+    readln(daftar[i].stok);
+    write('Harga Modalsatuan  : '); 
+    readln(daftar[i].hargaModal);
+  end;
+
+  
+  writeln;
+  writeln('=== DAFTAR SEMUA BARANG ===');
+  for i := 1 to n do
+  begin
+    writeln(i, '. ', daftar[i].nama);
+    writeln('   Stok       : ', daftar[i].stok);
+    writeln('   Harga Modal: ', daftar[i].hargaModal:0:2);
+  end;
+
+  writeln('=== BARANG YANG HAMPIR HABIS (stok <= 5) ===');
+  for i := 1 to n do
+    if daftar[i].stok <= BATAS_HABIS then
+      writeln('- ', daftar[i].nama, ' (Stok: ', daftar[i].stok, ')');
+
+  
+  writeln;
+  writeln('=== TOTAL NILAI SELURUH STOK ===');
+  writeln('Rp ', hitungTotalStok:0:2);   //pake function
+
+  writeln;
+  writeln('Selesai!');
+end.
 
